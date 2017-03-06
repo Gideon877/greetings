@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Thabang | Greetings</title>
+    <link rel="stylesheet" href="greet.css">
+  </head>
+  <body>
+
+    <h1 id="greeting" align="center">Greetings</h1>
+
+    <form class="name" action="index.html" method="post" autocomplete="off" align="center">
+        <label for=""><b>Name</b></label>
+        <input id="user_input" type="text" name="name" value="" placeholder="Enter name here"/>
+        <input type="button" value="Greet Me" onclick="showInput();"/> <br>
+
+        <h4 id="language_selection" align="center">
+            <!-- create an input variable for a user to select the language of their choice-->
+            <label for="english">English</label>
+            <input type="radio" name="language" id="english" value="english">
+
+            <label for="setswana">Setswana</label>
+            <input type="radio" name="language" id="setswana" value="setswana">
+
+            <label for="afrikaans">Afrikaans</label>
+            <input type="radio" name="language" id="afrikaans" value="afrikaans">
+        </h4>
+        <h3 onclick="clickCounter()"></h3>
+        <div id="result"></div>
+
+    <p id='show'><span id="display"></span></p>
+    </form>
+  </body>
+
+  <script src="greet.js"></script>
+
+  <footer id='footer' align="center">
+        <p>Posted by:<a href="https://twitter.com/gideon877"> <i>TG Magaola</i></a> ® <br></p>
+      </footer>
+
+</html>
