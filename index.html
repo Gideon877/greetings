@@ -11,19 +11,22 @@
 
     <form class="name" action="index.html" method="post" autocomplete="off" align="center">
         <label for=""><b>Name</b></label>
-        <input id="user_input" type="text" name="name" value="" placeholder="Enter name here"/>
+        <input id="user_input" type="text" name="name" placeholder="Enter name here"/>
         <input type="button" value="Greet Me" onclick="showInput();"/> <br>
+        <hr>
+        <!--input type="reset" value="Clear" onclick="resetClear()"-->
+        <button id="myBtn">Clear Counter</button>
 
-        <h4 id="language_selection" align="center">
+        <h4 id="languageSelection" align="center">
             <!-- create an input variable for a user to select the language of their choice-->
-            <label for="english">English</label>
             <input type="radio" name="language" id="english" value="english">
+            <label for="english">English</label>
 
-            <label for="setswana">Setswana</label>
             <input type="radio" name="language" id="setswana" value="setswana">
+            <label for="setswana">Setswana</label>
 
-            <label for="afrikaans">Afrikaans</label>
-            <input type="radio" name="language" id="afrikaans" value="afrikaans">
+            <input type="radio" name="language" id="zulu" value="zulu">
+            <label for="zulu">Zulu</label>
         </h4>
         <h3 onclick="clickCounter()"></h3>
         <div id="result"></div>
