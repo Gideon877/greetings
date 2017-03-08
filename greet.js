@@ -39,7 +39,7 @@ function showInput(){
 	          var container  = clickCounter();
 			}
 		}
-	
+
 		else if (name1.value.length > 0 && namesGreeted[name1.value] !== undefined){
 			if (document.getElementById('english').checked) {
 				greeting.innerHTML =
@@ -48,12 +48,12 @@ function showInput(){
 
 				} else if (document.getElementById('setswana').checked) {
 					greeting.innerHTML =
-												 "Dumela " + name1.value + ", welcome back.";
+												 "Dumela " + name1.value + ", rea ho amohela.";
 												 name1.value = "";
 
 				} else if (document.getElementById('zulu').checked) {
 					greeting.innerHTML =
-											 "Sawubona " + name1.value + ", welcome back.";
+											 "Sawubona " + name1.value + ", siyakwamukela.";
 											 name1.value = "";
 
 				}
