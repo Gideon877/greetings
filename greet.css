@@ -31,3 +31,12 @@ body {
 #user_input {
 	width: inherit;
 }
+
+#footer {
+  color: blue;
+}
+
+hr {
+    clear: both;
+    visibility: hidden;
+}

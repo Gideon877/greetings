@@ -1,9 +1,24 @@
+/*
+Coder	: Thabang Gideon Magaola
+About	: This is a web page that allows you to enter a name and when a button is pressed display a greeting
+				* keep track of how many times people were greeted
+				* greet people in more than one language
+
+*/
 var greeting = document.getElementById('display');
 var name1 = document.getElementById('user_input');
 
+var namesGreeted = {};
+
+for (var i=0; i<namesGreeted.length; i++){
+}
+
 
 function showInput(){
-	if (name1.value.length > 0 || name1.value === null){
+
+	if (name1.value.length > 0 && namesGreeted[name1.value] === undefined){
+
+		namesGreeted[name1.value] = 1;
 
 		if (document.getElementById('english').checked) {
 	    greeting.innerHTML =
@@ -24,19 +39,35 @@ function showInput(){
 	          var container  = clickCounter();
 			}
 		}
-		else{
-			greeting.innerHTML = "Please enter your name";
+	
+		else if (name1.value.length > 0 && namesGreeted[name1.value] !== undefined){
+			if (document.getElementById('english').checked) {
+				greeting.innerHTML =
+											 "Hello " + name1.value + ", welcome back.";
+											 name1.value = "";
+
+				} else if (document.getElementById('setswana').checked) {
+					greeting.innerHTML =
+												 "Dumela " + name1.value + ", welcome back.";
+												 name1.value = "";
+
+				} else if (document.getElementById('zulu').checked) {
+					greeting.innerHTML =
+											 "Sawubona " + name1.value + ", welcome back.";
+											 name1.value = "";
+
+				}
 		}
 };
 
 function clickCounter() {
     if(typeof(Storage) !== "undefined") {
-        if (sessionStorage.clickcount) {
-            sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+        if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount)+1;
         } else {
-            sessionStorage.clickcount = 1;
+            localStorage.clickcount = 1;
         }
-        document.getElementById("result").innerHTML = "You have been greeted " + sessionStorage.clickcount + " time(s) in this session.";
+        document.getElementById("result").innerHTML = "You have been greeted " + localStorage.clickcount + " time(s) in this session.";
     } else {
         document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
     }
@@ -46,12 +77,12 @@ var x = document.getElementById("myBtn");
 x.addEventListener("click", resetClear);
 
 function resetClear(){
-	alert ("Greetings counter deleted!");
-	sessionStorage.clickcount = 0;
+	//alert ("Greetings counter deleted!");
+	localStorage.clickcount = 0;
 
 }
 
-var namesGreeted = {};
+
 /*
 if (namesGreeted[name1] === undefined){
 	var clickCounter++;
