@@ -9,13 +9,13 @@
 
     <h1 id="greeting" align="center">Greetings</h1>
 
-    <form class="name" action="index.html" method="post" autocomplete="off" align="center">
+    <div class="name"  autocomplete="off" align="center">
         <label for=""><b>Name</b></label>
         <input id="user_input" type="text" name="name" placeholder="Enter name here"/>
         <input type="button" value="Greet Me" onclick="showInput();"/> <br>
         <hr>
         <!--input type="reset" value="Clear" onclick="resetClear()"-->
-        <button id="myBtn">Clear Counter</button><hr>
+        <button id="myBtn";>Clear Counter</button><hr>
 
         <!-- create an input variable for a user to select the language of their choice-->
         <input type="radio" name="language" id="english" value="english">
@@ -27,12 +27,12 @@
         <input type="radio" name="language" id="zulu" value="zulu">
         <label for="zulu">Zulu</label>
 
-        <h3 onclick="clickCounter()"></h3>
+        <!-- <h3 onclick="clickCounter()"></h3> -->
 
         <p id='show'><span id="display"></span></p>
         <div id="result"></div>
 
-    </form>
+    </div>
   </body>
 
   <script src="greet.js"></script>

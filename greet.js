@@ -70,7 +70,11 @@ var x = document.getElementById("myBtn");
 x.addEventListener("click", resetClear);
 
 function resetClear(){
+	console.log(localStorage.clickcount);
 //	alert ("Greetings counter deleted!");
-	localStorage.clickcount = 0;
-	//greeting.innerHTML = "You have been greeted " + localStorage.clickcount + " time(s) in this session.";
+	if (localStorage.clickcount >= 1) {
+		localStorage.clickcount = 0;
+	}
+	document.getElementById("result").innerHTML = "Names greeted for this session: " + localStorage.clickcount;
+		return localStorage.clickcount;
 }
