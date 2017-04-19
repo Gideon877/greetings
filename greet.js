@@ -16,38 +16,38 @@ for (var i=0; i<namesGreeted.length; i++){
 
 function showInput(){
 
-	if (name1.value.length > 0 && namesGreeted[name1.value] === undefined){
+	if (name1.value.length > 0 && namesGreeted[name1.value.toLowerCase()] === undefined){
 
-		namesGreeted[name1.value] = 1;
+		namesGreeted[name1.value.toLowerCase()] = 1;
 
 		if (document.getElementById('english').checked) {
-	    	greeting.innerHTML = "Hello, " + name1.value + ".";
+	    	greeting.innerHTML = "Hello, " + name1.value.toLowerCase() + ".";
 			name1.value = "";
 	       	var container  = clickCounter();
 
 			} else if (document.getElementById('setswana').checked) {
-	  		greeting.innerHTML = "Dumela, " + name1.value + ".";
+	  		greeting.innerHTML = "Dumela, " + name1.value.toLowerCase() + ".";
 			name1.value = "";
 	       	var container  = clickCounter();
 
 			} else if (document.getElementById('zulu').checked) {
-			greeting.innerHTML = "Sawubona, " + name1.value + ".";
+			greeting.innerHTML = "Sawubona, " + name1.value.toLowerCase() + ".";
 	       	name1.value = "";
          	var container  = clickCounter();
 			}
 		}
 
-	else if (name1.value.length > 0 && namesGreeted[name1.value] !== undefined){
+	else if (name1.value.length > 0 && namesGreeted[name1.value.toLowerCase()] !== undefined){
 		if (document.getElementById('english').checked) {
-			greeting.innerHTML = "Hello " + name1.value + ", welcome back.";
+			greeting.innerHTML = "Hello " + name1.value.toLowerCase() + ", welcome back.";
 			name1.value = "";
 
 		} else if (document.getElementById('setswana').checked) {
-			greeting.innerHTML = "Dumela " + name1.value + ", rea ho amohela.";
+			greeting.innerHTML = "Dumela " + name1.value.toLowerCase() + ", rea ho amohela.";
 			name1.value = "";
 
 		} else if (document.getElementById('zulu').checked) {
-			greeting.innerHTML = "Sawubona " + name1.value + ", siyakwamukela.";
+			greeting.innerHTML = "Sawubona " + name1.value.toLowerCase() + ", siyakwamukela.";
 			name1.value = "";
 		}
 	}
