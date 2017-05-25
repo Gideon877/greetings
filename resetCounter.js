@@ -1,4 +1,4 @@
-function resetClear(){
+function resetCounter(){
 	//check if the localStorage is not cleared yet
 	if (localStorage.clickcount >= 1) {
 		localStorage.clickcount = 0;
