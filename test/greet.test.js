@@ -1,36 +1,42 @@
 describe('The greet function', function() {
 
-    it('should greet Jen correctly in English', function() {
-        if (english) {
-            assert.equal('Hello, Jen', languageCheck());
+    it('should greet Thabang correctly in English', function() {
+        assert.equal("Hello, Thabang", greetFun('Thabang', 'English'));
 
-        }
     });
 
-    it('should update the counter for a new Name'),
-        function(user_name) {
-            assert.equal(user_name === null)
-            if (namesGreeted[user_name] === undefined) {
-                namesGreeted[user_name] = 1;
+    it('should greet Gideon correctly in Setswana', function() {
+        assert.equal("Dumela, Gideon", greetFun('Gideon', 'Setswana'));
 
-                if (localStorage.clickcount) {
-                    localStorage.clickcount = Number(localStorage.clickcount) + 1;
-                } else {
-                    localStorage.clickcount = 1;
-                }
+    });
 
-            }
+    it('should greet Llyod correctly in Zulu', function() {
+        assert.equal("Sawubona, Llyod", greetFun('Llyod', 'Zulu'));
 
-        }
+    });
+
+
+
+});
+describe('The resetCounter function', function() {
+
+    it('should reset count to 0', function() {
+        assert.equal(0, resetCounter());
+
+    });
 });
 
-describe('The reset counter function', function() {
 
-    it('should reset greeting counter to 0', function() {
 
-        assert.equal(undefined)
-        if (localStorage.clickcount >= 1) {
-            localStorage.clickcount = 0;
-        }
+describe('The clickCounter function', function() {
+
+    it('should count newly added names', function() {
+        assert.equal(undefined, newlyAdded('Thabang'));
+
+    });
+
+    it("should add value to whenever a 'click' is heard", function() {
+        assert.equal(undefined, clickCounter());
+
     });
 });
