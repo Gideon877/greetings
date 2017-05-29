@@ -5,8 +5,10 @@ function clickCounter() {
         } else {
             localStorage.clickcount = 1;
         }
-        // document.getElementById("result").innerHTML = "Names greeted for this session: " + localStorage.clickcount;
+        // return "Names greeted for this session: " + localStorage.clickcount;
+        countDisiplay.innerHTML = "Names greeted for this session: " + localStorage.clickcount;
     } else {
-        // document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+        // return "Sorry, your browser does not support web storage...";
+        countDisiplay.innerHTML = "Sorry, your browser does not support web storage...";
     }
 }
