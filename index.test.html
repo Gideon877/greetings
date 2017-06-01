@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Test Greeting Web</title>
-    <!-- <link rel="stylesheet" href="css/greet.css"> -->
+    <link rel="stylesheet" href="css/greet.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.min.js"></script>
@@ -14,7 +14,31 @@
 </head>
 
 <body>
-    <h1 align='center'>Test my greeting webpage</h1>
+    <h1 align='center' id="testing">Test my greeting webpage</h1>
+    <div class="name" align="center">
+
+        <label for=""><b>Name</b></label>
+        <input id="user_input" type="text" name="name" placeholder="Enter name here"/>
+        <input type="button" value="Greet Me" onclick="showInput();"/> <br>
+        <hr>
+
+        <button id="myBtn" onclick="resetCounter();">Clear Counter</button><hr>
+
+        <!-- create an input variable for a user to select the language of their choice-->
+        <input type="radio" name="language" id="english" value="english">
+        <label for="english">English</label>
+
+        <input type="radio" name="language" id="setswana" value="setswana">
+        <label for="setswana">Setswana</label>
+
+        <input type="radio" name="language" id="zulu" value="zulu">
+        <label for="zulu">Zulu</label>
+
+
+        <p id='show'><span id="display"></span></p>
+        <div id="result"></div>
+
+    </div>
     <div id="mocha"></div>
     <script>
         // the mocha test style to use - we use BDD - Behviour Driven Development

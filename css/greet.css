@@ -1,4 +1,4 @@
-body {
+.body {
     background-image: url("chipmunks.jpg");
     background-attachment: fixed;
 }
@@ -6,6 +6,13 @@ body {
 #greeting {
     color: black;
     font-size: 100px;
+    padding: 5%;
+    padding-top: 1%;
+    margin: 0;
+}
+#testing {
+    color: black;
+    /*font-size: 100px;*/
     padding: 5%;
     padding-top: 1%;
     margin: 0;

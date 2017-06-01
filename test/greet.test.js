@@ -1,17 +1,37 @@
 describe('The greet function', function() {
     it('should greet Thabang correctly in English', function() {
-        assert.equal("Hello, Thabang", greetFun('Thabang', 'English'));
+        //Asemble
+
+        var user_name = document.getElementById('user_input'); //Get user input
+        var language = document.getElementById('zulu');
+        // var setswana = document.getElementById('setswana');
+        // var zulu = document.getElementById('zulu');
+        user_name.value = 'Thabang';
+        zulu.checked = true;
+        var s = myInputs();
+        assert.equal('Thabang', s.name);
+        assert.equal('zulu', s.language);
 
     });
 
-    it('should greet Gideon correctly in Setswana', function() {
-        assert.equal("Dumela, Gideon", greetFun('Gideon', 'Setswana'));
+    it("should display greeting message, 'Sawubona, Thabang'", function() {
+        displayMessage("Sawubona, Thabang")
+        assert.equal("Sawubona, Thabang",greetingDisplay.innerHTML);
 
     });
-    it('should greet Llyod correctly in Zulu', function() {
-        assert.equal("Sawubona, Llyod", greetFun('Llyod', 'Zulu'));
+
+    it("should be able to clear screen", function() {
+        var user_name = document.getElementById('user_input'); //Get user input
+
+        clearMessage()
+        var language = document.querySelector("input[name='language']:checked");
+
+        assert.equal("",greetingDisplay.innerHTML);
+        assert.equal(user_name.value, '');
+        assert.equal(language, null);
 
     });
+
 
 
 

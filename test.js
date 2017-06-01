@@ -43,3 +43,32 @@ function clickCounter() {
 
     }
 }
+
+
+var user_name = document.getElementById('user_input');
+
+var myInputs = function() {
+    var language = document.querySelector("input[name='language']:checked");
+    return {
+        name: user_name.value,
+        language: language.value
+    }
+}
+
+
+var greetingDisplay = document.getElementById('display');
+
+function displayMessage(msg) {
+    greetingDisplay.innerHTML = msg;
+};
+
+var radioBtn = document.querySelectorAll("input[name='language']");
+
+function clearMessage() {
+    greetingDisplay.innerHTML = '';
+    user_name.value = '';
+    for (var i = 0; i < radioBtn.length; i++) {
+        var radioLang = radioBtn[i];
+        radioLang.checked = false;
+    }
+};
