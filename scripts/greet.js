@@ -1,6 +1,8 @@
 /*var count = document.querySelector('#counter');
 var clicks = 0;
 */
+document.getElementById("display").innerHTML = "Greeting message will show here."
+
 function showInput(){
 
 	if (document.getElementById('english').checked) {
@@ -23,7 +25,6 @@ function showInput(){
 
 		}
 };
-
 function clickCounter() {
     if(typeof(Storage) !== "undefined") {
         if (sessionStorage.clickcount) {
@@ -31,7 +32,7 @@ function clickCounter() {
         } else {
             sessionStorage.clickcount = 1;
         }
-        document.getElementById("result").innerHTML = "You have been greeted " + sessionStorage.clickcount + " time(s) in this session.";
+        document.getElementById("result").innerHTML = "Name(s) greeted for this session is " + sessionStorage.clickcount + ".";
     } else {
         document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
     }

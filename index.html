@@ -3,37 +3,60 @@
   <head>
     <meta charset="utf-8">
     <title>Thabang | Greetings</title>
-    <link rel="stylesheet" href="greet.css">
+    <link rel="stylesheet" href="SemanticUI/semantic.css">
   </head>
   <body>
 
-    <h1 id="greeting" align="center">Greetings</h1>
+    <div class="ui middle aligned center aligned container">
+      <h2 class="ui teal header">Greetings</h2>
+        <div class="ui piled segment">
+            <div class="required field">
+                <div class="ui large left icon input">
+                    <i class="user icon"></i>
+                    <input type="text" name="name" placeholder="Name" id="user_input" value="" required>
+                </div>
+            </div>
+            <hr>
+            <div class="ui form">
+                <div class="grouped fields">
+                  <label>Please select language to be greeted on.</label>
+                  <div class="field">
+                    <div class="ui radio checkbox">
+                      <input type="radio" name="language" id="english" value="english">
+                      <label>English</label>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <div class="ui radio checkbox">
+                      <input type="radio" name="language" id="afrikaans" value="afrikaans">
+                      <label>Afrikaans</label>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <div class="ui radio checkbox">
+                      <input type="radio" name="language" id="setswana" value="setswana">
+                      <label>Setswana</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-    <form class="name" action="index.html" method="post" autocomplete="off" align="center">
-        <label for=""><b>Name</b></label>
-        <input id="user_input" type="text" name="name" value="" placeholder="Enter name here"/>
-        <input type="button" value="Greet Me" onclick="showInput();"/> <br>
+            <br> <hr>
+            
+            <button class="primary ui large button" type="submit" onclick="showInput();">Greet</button>
+            <button class="negative ui large button" type="submit" onclick="clickCounter();">Clear</button>
 
-        <h4 id="language_selection" align="center">
-            <!-- create an input variable for a user to select the language of their choice-->
-            <label for="english">English</label>
-            <input type="radio" name="language" id="english" value="english">
-
-            <label for="setswana">Setswana</label>
-            <input type="radio" name="language" id="setswana" value="setswana">
-
-            <label for="afrikaans">Afrikaans</label>
-            <input type="radio" name="language" id="afrikaans" value="afrikaans">
-        </h4>
-        <h3 onclick="clickCounter()"></h3>
-        <div id="result"></div>
-
-    <p id='show'><span id="display"></span></p>
-    </form>
+            <br> <hr>
+            
+            <div class="ui message">
+                <div class="header" id="display">
+                </div>
+                <p id="result"></p>
+              </div>
+      </div>
+    </div>
+    <script src="scripts/greet.js"></script>
   </body>
-
-  <script src="greet.js"></script>
-
   <footer id='footer' align="center">
         <p>Posted by:<a href="https://twitter.com/gideon877"> <i>TG Magaola</i></a> ® <br></p>
       </footer>
