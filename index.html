@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Thabang | Greetings</title>
-    <link rel="stylesheet" href="SemanticUI/semantic.css">
-  </head>
-  <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="semanticUI/semantic.css">
+</head>
 
+<body>
     <div class="ui middle aligned center aligned container">
-      <h2 class="ui teal header">Greetings</h2>
+        <hr>
         <div class="ui piled segment">
+            <h2 class="ui teal header">Greetings</h2>
+            <div class="ui message">
+                <div class="header">Please enter the name to be greeted.</div>
+            </div>
             <div class="required field">
                 <div class="ui large left icon input">
                     <i class="user icon"></i>
@@ -19,46 +26,73 @@
             <hr>
             <div class="ui form">
                 <div class="grouped fields">
-                  <label>Please select language to be greeted on.</label>
-                  <div class="field">
-                    <div class="ui radio checkbox">
-                      <input type="radio" name="language" id="english" value="english">
-                      <label>English</label>
+                    <label>Please select language to be greeted on.</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="language" id="zulu" value="zulu">
+                            <label>Zulu</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="language" id="xhosa" value="xhosa">
+                            <label>Xhosa</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                      <div class="ui radio checkbox">
+                        <input type="radio" name="language" id="french" value="french">
+                        <label>French</label>
+                      </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="language" id="english" value="english">
+                            <label>English</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                      <div class="ui radio checkbox">
+                        <input type="radio" name="language" id="spanish" value="spanish">
+                        <label>Spanish</label>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <div class="ui radio checkbox">
+                        <input type="radio" name="language" id="setswana" value="setswana">
+                        <label>Setswana</label>
+                      </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="language" id="afrikaans" value="afrikaans">
+                            <label>Afrikaans</label>
+                        </div>
                     </div>
                   </div>
-                  <div class="field">
-                    <div class="ui radio checkbox">
-                      <input type="radio" name="language" id="afrikaans" value="afrikaans">
-                      <label>Afrikaans</label>
-                    </div>
-                  </div>
-                  <div class="field">
-                    <div class="ui radio checkbox">
-                      <input type="radio" name="language" id="setswana" value="setswana">
-                      <label>Setswana</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            <br> <hr>
-            
+            </div>
+            <hr>
             <button class="primary ui large button" type="submit" onclick="showInput();">Greet</button>
-            <button class="negative ui large button" type="submit" onclick="clickCounter();">Clear</button>
+            <button class="negative ui large button" type="submit" id="myBtn" onclick="resetClear();">Clear</button>
+            <br>
+            <hr>
 
-            <br> <hr>
-            
             <div class="ui message">
-                <div class="header" id="display">
-                </div>
-                <p id="result"></p>
-              </div>
-      </div>
+                <div class="header" id="display"></div>
+                <p id="result">Your greeting message will be displayed here.</p>
+            </div>
+        </div>
     </div>
+    <script>
+        $("#user_input").keyup(function(e) {
+            var regex = /^[a-zA-Z]+$/;
+            if (regex.test(this.value) !== true)
+              this.value = this.value.replace(/[^a-zA-Z]+/, '');
+        });
+    </script>
+    <script src="scripts/translation.js"></script>
+    <script src="scripts/storage.js"></script>
     <script src="scripts/greet.js"></script>
-  </body>
-  <footer id='footer' align="center">
-        <p>Posted by:<a href="https://twitter.com/gideon877"> <i>TG Magaola</i></a> ® <br></p>
-      </footer>
+</body>
 
 </html>
