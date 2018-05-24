@@ -1,14 +1,14 @@
 /*
-Coder	: Thabang Gideon Magaola
-About	: This is a web page that allows you to enter a name and when a button is pressed display a greeting
-				* keep track of how many times people were greeted
-				* greet people in more than one language
+Author	: Thabang Gideon Magaola
+About	: This is a web page that allows you to enter/input a name, and when a button is pressed it display a greeting message based on the language selected
+			* keep track of how many times people were greeted
+			* greet people in more than one language
+			* save greeted names on a browser storage
 */
 var greeting = document.getElementById('display');
 var userInput = document.getElementById('user_input');
 var counterMessage = document.getElementById("result");
 var namesGreeted = {}; //this variable will store all the new names.
-
 
 function showInput(){
 	let userName = userInput.value.toLowerCase();
