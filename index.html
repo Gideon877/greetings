@@ -86,13 +86,12 @@
     <script>
         $("#user_input").keyup(function(e) {
             var regex = /^[a-zA-Z]+$/;
-            if (regex.test(this.value) !== true)
-              this.value = this.value.replace(/[^a-zA-Z]+/, '');
+            (regex.test(this.value) !== true) ? this.value = this.value.replace(/[^a-zA-Z]+/, '') : this.value
         });
     </script>
-    <script src="scripts/translation.js"></script>
-    <script src="scripts/storage.js"></script>
-    <script src="scripts/greet.js"></script>
+    <script src="js/translation.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/greet.js"></script>
 </body>
 
 </html>
