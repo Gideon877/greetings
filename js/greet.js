@@ -6,21 +6,25 @@ About	: This is a web page that allows you to enter/input a name, and when a but
 			* save greeted names on a browser storage
 */
 
-[greeting, userInput, counterMessage, namesGreeted] = 
-[document.getElementById('display'), document.getElementById('user_input'), document.getElementById("result"), {}]
+[greeting, userInput, counterMessage, namesGreeted, selectedLanguage, warn] = 
+[document.getElementById('display'), document.getElementById('user_input'), document.getElementById("result"), {},
+ document.getElementById('dropdown'), document.getElementById('warningHeader')]
+
 
 function showInput(){
 	let userName = userInput.value.toLowerCase();
-	var selectedLanguage = document.querySelectorAll("input[name='language']:checked");
-	var language = selectedLanguage["0"].value;
+	var language = selectedLanguage.options[selectedLanguage.selectedIndex].value;
+	
+	(!userName) ? getWarning() : clearWarn()
 
-	if (userInput.value && namesGreeted[userName] === undefined){
-		namesGreeted[userName] = 1, greeting.innerHTML = obj[language] + userName, userInput.value = "";
-		clickCounter(); 
+	function getGreetMessage(input) {
+		return input.language === language;
 	}
 
-	if (userInput.value && namesGreeted[userName]){
-		greeting.innerHTML = obj[language] + userName + message[language];userInput.value = "";
-	}
+	let obj = languages.find(getGreetMessage);
+
+	greetSomeone(userName, obj)
+
+
 };
 
