@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Thabang | Greetings</title>
+    <script src="js/handlebars-v4.0.11.js"></script>
+    <title>Greetings WebPage | codeX Academy 2017</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/master.css">
     <link rel="stylesheet" href="css/semanticUI/semantic.css">
@@ -16,7 +17,7 @@
         <div class="ui piled segment">
             <h2 class="ui teal header">Greetings</h2>
             <div class="ui message">
-                <div class="header">Please enter the name to be greeted.</div>
+                <div class="header" id="warningHeader">Please enter the name to be greeted.</div>
             </div>
             <div class="required field">
                 <div class="ui large left icon input">
@@ -25,53 +26,7 @@
                 </div>
             </div>
             <hr>
-            <div class="ui form">
-                <div class="grouped fields">
-                    <label>Please select language to be greeted on.</label>
-                    <div class="field">
-                        <div class="ui radio checkbox">
-                            <input type="radio" name="language" id="zulu" value="zulu">
-                            <label>Zulu</label>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <div class="ui radio checkbox">
-                            <input type="radio" name="language" id="xhosa" value="xhosa">
-                            <label>Xhosa</label>
-                        </div>
-                    </div>
-                    <div class="field">
-                      <div class="ui radio checkbox">
-                        <input type="radio" name="language" id="french" value="french">
-                        <label>French</label>
-                      </div>
-                    </div>
-                    <div class="field">
-                        <div class="ui radio checkbox">
-                            <input type="radio" name="language" id="english" value="english">
-                            <label>English</label>
-                        </div>
-                    </div>
-                    <div class="field">
-                      <div class="ui radio checkbox">
-                        <input type="radio" name="language" id="spanish" value="spanish">
-                        <label>Spanish</label>
-                      </div>
-                    </div>
-                    <div class="field">
-                      <div class="ui radio checkbox">
-                        <input type="radio" name="language" id="setswana" value="setswana">
-                        <label>Setswana</label>
-                      </div>
-                    </div>
-                    <div class="field">
-                        <div class="ui radio checkbox">
-                            <input type="radio" name="language" id="afrikaans" value="afrikaans">
-                            <label>Afrikaans</label>
-                        </div>
-                    </div>
-                  </div>
-            </div>
+            <div id="showDropdowns"></div>
             <hr>
             <button class="primary ui large button" type="submit" onclick="showInput();">Greet</button>
             <button class="negative ui large button" type="submit" id="myBtn" onclick="resetClear();">Clear</button>
@@ -84,14 +39,19 @@
             </div>
         </div>
     </div>
-    <script>
-        $("#user_input").keyup(function(e) {
-            var regex = /^[a-zA-Z]+$/;
-            (regex.test(this.value) !== true) ? this.value = this.value.replace(/[^a-zA-Z]+/, '') : this.value
-        });
+    <script id="dropdownTable" type="text/x-handlebars-template">
+
+        <select class="ui dropdown" id="dropdown">
+            {{#each languages}}
+            <option value="{{language}}">{{language}}</option>
+            {{/each}}
+          </select>
+    
     </script>
     <script src="js/translation.js"></script>
+    <script src="js/handler.js"></script>
     <script src="js/storage.js"></script>
+    <script src="js/template.js"></script>
     <script src="js/greet.js"></script>
 </body>
 
