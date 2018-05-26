@@ -16,7 +16,8 @@ function resetClear(){
 		localStorage.clickcount = 0;
 		namesGreeted = {};
 	}
-	
-	counterMessage.innerHTML = "Names greeted for this session: " + localStorage.clickcount;
-		return localStorage.clickcount;
+    counterMessage.innerHTML = "Names greeted cleared.";
+    counterMessage.style.color = 'red'
+    greeting.innerHTML = ''
+	return localStorage.clickcount;
 }
