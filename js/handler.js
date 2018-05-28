@@ -8,17 +8,16 @@ function clearWarn() {
 }
 
 function greetSomeone(userName, obj) {
-	if (userInput.value && namesGreeted[userName] === undefined){
-		namesGreeted[userName] = 1, 
-		greeting.innerHTML = obj.greetMessage + userName + '.',
-		userInput.value = "";
-		clickCounter(); 
+	if (userName && namesGreeted[userName] === undefined){
+		namesGreeted[userName] = 1, //Assign a value 1 for a newly greeted name to be stored as a map.
+		greeting.innerHTML = obj.greetMessage + userName + '.', //Display greet message to a user. 
+		clickCounter(); //Keep count on how many new names have been greeted.
 	}
 
 	if (userInput.value && namesGreeted[userName]){
-		greeting.innerHTML = obj.greetMessage + userName + '. ' + obj.greetedMessage;
-		userInput.value = "";
+		greeting.innerHTML = obj.greetMessage + userName + '. ' + obj.greetedMessage; //Display greet message to a user
 	}
+	userInput.value = ""; //clear input textbox for a user to enter a new name.
 }
 
 $("#user_input").keyup(function(e) {
